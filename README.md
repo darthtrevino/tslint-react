@@ -30,6 +30,10 @@ Here's a sample configuration where `tslint.json` lives adjacent to your `node_m
 * `jsx-no-object-literal-props`
   * Creating new object instances inside the `render` call stack works against _pure component rendering_. When doing an shallow equality check between two lambdas, React will always consider them unequal values and force the component to re-render more often than necessary.
   * Rule options: _none_
+* `react-pure-components-have-simple-attributes`
+  * Components adhering to _pure component rendering_ semantics can be susceptible to excessive rerenderings if their props are complex types. Complex types will be checked by identity, and if these are created dynamically or change at all, they wil result in unnecessary renders.
+* `react-component-classes-should-implement-scu`
+  * Components extending React.Component re-render on prop changes by default. This may not be desirable. To minimize re-renders, these components should either implement `shouldComponentUpdate()` or extend `React.PureComponent` instead of `React.Component`
 
 ### Development
 
