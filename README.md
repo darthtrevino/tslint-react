@@ -1,3 +1,6 @@
+#NOTE
+I don't use this project anymore. Most of the concerns I'm trying to address here can be mitigated by using hooks properly (useMemo, useCallback).
+
 ## tslint-react-perf
 
 Supplemental performance-based rules related to React & JSX for [TSLint](https://github.com/palantir/tslint/). This library is considered a stopgap until these rules are adopted by tslint-react.
