@@ -150,7 +150,7 @@ function inspectComponentPropsTypeReference(
 	if (type) {
 		// Unpack symbolic data
 		const typeSymbol = type.getSymbol() as ts.Symbol
-		const typeSymbolMembers = typeSymbol.members
+		const typeSymbolMembers = typeSymbol!.members
 		if (typeSymbolMembers) {
 			// Inspect target type members
 			typeSymbolMembers.forEach((member: ts.Symbol, key: ts.__String) => {
