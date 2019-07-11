@@ -22,7 +22,8 @@ export class Rule extends Lint.Rules.TypedRule {
 	/* tslint:enable:object-literal-sort-keys */
 
 	/* tslint:disable-next-line max-line-length */
-	public static FAILURE_STRING = 'React components using Pure semantics should avoid types that can cause shallow equality checks to fail. This is ignorable if you are certain that prop references will not change. (react-pure-components-have-simple-attributes)'
+	public static FAILURE_STRING =
+		'React components using Pure semantics should avoid types that can cause shallow equality checks to fail. This is ignorable if you are certain that prop references will not change. (react-pure-components-have-simple-attributes)'
 
 	public applyWithProgram(
 		sourceFile: ts.SourceFile,
@@ -150,7 +151,7 @@ function inspectComponentPropsTypeReference(
 	if (type) {
 		// Unpack symbolic data
 		const typeSymbol = type.getSymbol() as ts.Symbol
-		const typeSymbolMembers = typeSymbol!.members
+		const typeSymbolMembers = typeSymbol && typeSymbol.members
 		if (typeSymbolMembers) {
 			// Inspect target type members
 			typeSymbolMembers.forEach((member: ts.Symbol, key: ts.__String) => {
